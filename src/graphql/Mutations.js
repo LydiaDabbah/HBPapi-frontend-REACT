@@ -9,6 +9,15 @@ mutation createMovie($title: String!, $description: String!, $dateOfRelease: Str
   
 }
  `
+ export const ADD_LIKES = gql`
+ mutation addLikes ($id:ID){
+    addLikes(_id:$id){
+      _id
+      likes
+    }
+  }
+
+  `
 // export const REMOVE_NOTE = gql`
 // mutation removeNote($id: ID!){
 //     removeNote(id: $id){

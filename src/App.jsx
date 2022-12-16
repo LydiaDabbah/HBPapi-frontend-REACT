@@ -8,6 +8,7 @@ import { AuthProvider } from './context/AuthContext2'
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Login2 from "./components/Login";
 import AddMovieForm from "./components/addMovieForm";
+import Search from "./components/Search";
 
 
 const client = new ApolloClient({
@@ -24,7 +25,7 @@ function App() {
 			<AuthProvider>
 				<Navbar />
 				<Routes>
-					<Route path="/home" element={<LoginProtected><Movies /></LoginProtected>} />
+					<Route path="/home" element={<LoginProtected><Search /></LoginProtected>} />
 					<Route path="/create-movie" element={<LoginProtected><AddMovieForm /></LoginProtected>} />
 					<Route  index element={<Login2/>} />
 				</Routes>

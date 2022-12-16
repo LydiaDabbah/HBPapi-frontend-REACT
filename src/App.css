@@ -68,4 +68,13 @@
   border:2px solid rgb(96, 45, 213);
   background: black
 }
- 
+
+.btn-link{
+
+  background: none!important;
+border: none;
+padding: 0!important;
+
+cursor: pointer;
+
+}

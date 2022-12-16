@@ -82,7 +82,6 @@ const AddMovieForm = () => {
             width: "680px",
             display: "grid",
             gap: "2 rem",
-            background: "rgb(54,25,62)",
             background:
               "radial-gradient(circle, rgba(54,25,62,1) 0%, rgba(53,30,69,1) 0%, rgba(18,6,23,1) 100%)",
           }}

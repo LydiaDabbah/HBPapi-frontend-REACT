@@ -1,11 +1,14 @@
 import React from 'react'
+import "bootstrap/dist/js/bootstrap.bundle";
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthContext } from "../context/AuthContext2";
+import SearchInput from './SearchInput';
 const Navbar = () => {
  
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+  const [displayInputBar, setDisplayInputBar] = useState(false);
   const {authorized,setAuthorized}= useAuthContext();
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
@@ -68,11 +71,21 @@ const Navbar = () => {
          />
        </Link>
          <ul className=" navbar-nav justify-content-end">
+         <li className="nav-item ">
+              <a
+                href="#"
+                className="nav-link text-light"
+                onClick={() => setDisplayInputBar(!displayInputBar)}
+              >
+                <i className="bi bi-search "></i>
+              </a>
+            </li>
+
          <li className="nav-item">
              <a   onClick={logoutHandler}
                   href="#"
                   className="nav-link text-light"
-                  to="/login" >{authorized?'Logout': 'Login'}</a>
+                  to="/login" >{authorized?<p><i class="bi bi-box-arrow-right"></i> Logout</p>: <p><i class="bi bi-person"></i> Login</p>}</a>
            </li>
            
            <li className="nav-item">
@@ -93,6 +106,7 @@ const Navbar = () => {
        </div>
       
      </nav>
+     {displayInputBar && <SearchInput />}
 </>
   )
 }
